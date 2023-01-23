@@ -1,6 +1,24 @@
 class RomanConversion
   def roman_to_int(s)
-    s.chars.map { |numeral| dictionary[numeral] }.sum
+    calculate_value(s).sum
+  end
+
+  def to_integers(numerals)
+    numerals.chars.map { |numeral| dictionary[numeral] }
+  end
+
+  def to_chunks(numerals)
+    to_integers(numerals).chunk_while { |first_value, second_value| first_value <= second_value }
+  end
+
+  def calculate_value(s)
+    to_chunks(s).map do |chunk|
+      if chunk.first < chunk.last
+        chunk.reverse.inject(:-)
+      else
+        chunk.sum
+      end
+    end
   end
 
   def dictionary
