@@ -1,4 +1,4 @@
-class RomanConversione
+class RomanConversion
   def roman_to_int(s)
     s.chars.map { |numeral| dictionary[numeral] }.sum
   end
