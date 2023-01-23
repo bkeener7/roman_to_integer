@@ -9,4 +9,8 @@ RSpec.describe RomanConversion do
   it 'can convert I numerals to numbers' do
     expect(conversion.roman_to_int('III')).to eq(3)
   end
+
+  it 'can covert different numerals to numbers' do
+    expect(conversion.roman_to_int('LVIII')).to eq(58)
+  end
 end
