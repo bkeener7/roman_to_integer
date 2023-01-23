@@ -1,0 +1,4 @@
+coverage
+.vscode/settings.json
+.DS_Store
+.rubocop.yml
